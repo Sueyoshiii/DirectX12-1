@@ -215,10 +215,10 @@ Device::~Device()
 DirectX::XMMATRIX Device::SetViewMatrix(void)
 {
 	//ダミー宣言
-	FLOAT pos = 0.0f;
+	FLOAT pos = 10.0f;
 	DirectX::XMMATRIX view = DirectX::XMMatrixIdentity();
 	//カメラの位置
-	DirectX::XMVECTOR eye = { 0, pos,  -1 };
+	DirectX::XMVECTOR eye = { 0, pos,  -15 };
 	//カメラの焦点
 	DirectX::XMVECTOR target = { 0, pos,   0 };
 	//カメラの上方向
@@ -1041,8 +1041,8 @@ void Device::Init(void)
 	}
 
 
-	TextInit();
-	//ModelInit();
+	//TextInit();
+	ModelInit();
 }
 
 // テクスチャ用の初期処理
@@ -1299,8 +1299,8 @@ void Device::UpData(void)
 	command.list->IASetVertexBuffers(0, 1, &vertexView);
 
 	// 描画
-	BMP::GetInstance()->Draw(0, command.list);
-	//PMD::GetInstance()->Draw(command.list, indexView);
+	//BMP::GetInstance()->Draw(0, command.list);
+	PMD::GetInstance()->Draw(command.list, indexView);
 
 	/*command.list->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	command.list->DrawInstanced(6, 1, 0, 0);*/
