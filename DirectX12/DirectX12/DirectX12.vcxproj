@@ -115,19 +115,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BMP.cpp" />
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PMD.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="WICTextureLoader12.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BMP.h" />
     <ClInclude Include="d3dx12.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="KeyTbl.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="PMD.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Typedef.h" />
     <ClInclude Include="WICTextureLoader12.h" />
@@ -136,15 +140,21 @@
   <ItemGroup>
     <FxCompile Include="Shader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </EntryPointName>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </EntryPointName>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </EntryPointName>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
     </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,4 +1,6 @@
 #include "Device.h"
+#include "BMP.h"
+#include "PMD.h"
 #include "d3dx12.h"
 #include <d3dcompiler.h>
 #include <tchar.h>
@@ -194,6 +196,18 @@ Device::~Device()
 		{
 			renderTarget[i]->Release();
 		}
+	}
+
+	//BMPクラス
+	if (BMP::GetInstance() != nullptr)
+	{
+		BMP::GetInstance()->Destroy();
+	}
+
+	//PMDクラス
+	if (PMD::GetInstance() != nullptr)
+	{
+		PMD::GetInstance()->Destroy();
 	}
 }
 
@@ -821,7 +835,7 @@ HRESULT Device::CreateVertexBufferTexture(void)
 // モデル用頂点バッファの生成
 HRESULT Device::CreateVertexBufferModel(void)
 {
-	/*//頂点用リソース生成
+	//頂点用リソース生成
 	result = command.dev->CreateCommittedResource(&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD), D3D12_HEAP_FLAG_NONE, &CD3DX12_RESOURCE_DESC::Buffer(sizeof(VERETX) * PMD::GetInstance()->GetVertex().size()), D3D12_RESOURCE_STATE_GENERIC_READ, nullptr, IID_PPV_ARGS(&view[mode[0]].resource));
 	if (FAILED(result))
 	{
@@ -887,7 +901,7 @@ HRESULT Device::CreateVertexBufferModel(void)
 	indexView.BufferLocation = view[mode[0]].resource->GetGPUVirtualAddress();
 	indexView.SizeInBytes = sizeof(USHORT) * PMD::GetInstance()->GetIndex().size();
 	indexView.Format = DXGI_FORMAT_R16_UINT;
-	*/
+	
 	return result;
 }
 
@@ -1034,19 +1048,19 @@ void Device::Init(void)
 // テクスチャ用の初期処理
 void Device::TextInit(void)
 {
-	/*if (BMP::GetInstance() == nullptr)
+	if (BMP::GetInstance() == nullptr)
 	{
 		//BMPクラスのインスタンス
 		BMP::Create();
 	}
 
 	//BMP読み込み
-	result = BMP::GetInstance()->LoadBMP(0, "sample/texturesample24bit.bmp", command.dev);
+	result = BMP::GetInstance()->LoadBMP(0, "サンプル/texturesample24bit.bmp", command.dev);
 	if (FAILED(result))
 	{
 		return;
 	}
-	*/
+	
 	//シェーダー
 	result = ShaderCompileTexture();
 	if (FAILED(result))
@@ -1072,19 +1086,19 @@ void Device::TextInit(void)
 // モデル用の初期化
 void Device::ModelInit(void)
 {
-	/*if (PMD::GetInstance() == nullptr)
+	if (PMD::GetInstance() == nullptr)
 	{
 		//PMDクラスのインスタンスインスタンス
 		PMD::Create();
 	}
 
 	//PMD読み込み
-	result = PMD::GetInstance()->LoadPMD("MikuMikuDance/UserFile/Model/初音ミク.pmd", command.dev);
+	result = PMD::GetInstance()->LoadPMD("サンプル/ミク.pmd", command.dev);
 	if (FAILED(result))
 	{
 		return;
 	}
-	*/
+	
 	//ボーンの回転
 	//PMD::GetInstance()->BornRotation("左肩", DirectX::XMMatrixRotationZ(RAD(60)));
 
@@ -1285,12 +1299,11 @@ void Device::UpData(void)
 	command.list->IASetVertexBuffers(0, 1, &vertexView);
 
 	// 描画
-	//BMP::GetInstance()->Draw(0, command.list);
+	BMP::GetInstance()->Draw(0, command.list);
 	//PMD::GetInstance()->Draw(command.list, indexView);
 
-	command.list->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-	command.list->DrawInstanced(6, 1, 0, 0);
+	/*command.list->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	command.list->DrawInstanced(6, 1, 0, 0);*/
 
 	// RenderTarget ---> Present
 	Barrier(D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);

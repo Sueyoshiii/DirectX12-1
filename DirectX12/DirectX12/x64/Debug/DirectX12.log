@@ -1,0 +1,34 @@
+﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
+C:\Users\1601271\Documents\GitHub\DirectX12\DirectX12\DirectX12\Shader.hlsl(71,2-20): warning X3206: implicit truncation of vector type
+C:\Users\1601271\Documents\GitHub\DirectX12\DirectX12\DirectX12\Shader.hlsl(72,2-24): warning X3206: implicit truncation of vector type
+C:\Users\1601271\Documents\GitHub\DirectX12\DirectX12\DirectX12\Shader.hlsl(100,2-36): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\1601271\Documents\GitHub\DirectX12\DirectX12\x64\Debug\Shader.cso
+  BMP.cpp
+c:\users\1601271\documents\github\directx12\directx12\directx12\bmp.cpp(318): warning C4244: '引数': 'LONG_PTR' から 'UINT' への変換です。データが失われる可能性があります。
+  Device.cpp
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(655): error C2664: 'HRESULT D3DCompileFromFile(LPCWSTR,const D3D_SHADER_MACRO *,ID3DInclude *,LPCSTR,LPCSTR,UINT,UINT,ID3DBlob **,ID3DBlob **)': 引数 1 を 'const char [12]' から 'LPCWSTR' へ変換できません。
+  c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(655): note: 指示された型は関連がありません。変換には reinterpret_cast、C スタイル キャストまたは関数スタイルのキャストが必要です。
+c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(664): error C2664: 'HRESULT D3DCompileFromFile(LPCWSTR,const D3D_SHADER_MACRO *,ID3DInclude *,LPCSTR,LPCSTR,UINT,UINT,ID3DBlob **,ID3DBlob **)': 引数 1 を 'const char [12]' から 'LPCWSTR' へ変換できません。
+  c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(664): note: 指示された型は関連がありません。変換には reinterpret_cast、C スタイル キャストまたは関数スタイルのキャストが必要です。
+c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(679): error C2664: 'HRESULT D3DCompileFromFile(LPCWSTR,const D3D_SHADER_MACRO *,ID3DInclude *,LPCSTR,LPCSTR,UINT,UINT,ID3DBlob **,ID3DBlob **)': 引数 1 を 'const char [12]' から 'LPCWSTR' へ変換できません。
+  c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(679): note: 指示された型は関連がありません。変換には reinterpret_cast、C スタイル キャストまたは関数スタイルのキャストが必要です。
+c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(688): error C2664: 'HRESULT D3DCompileFromFile(LPCWSTR,const D3D_SHADER_MACRO *,ID3DInclude *,LPCSTR,LPCSTR,UINT,UINT,ID3DBlob **,ID3DBlob **)': 引数 1 を 'const char [12]' から 'LPCWSTR' へ変換できません。
+  c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(688): note: 指示された型は関連がありません。変換には reinterpret_cast、C スタイル キャストまたは関数スタイルのキャストが必要です。
+c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(870): warning C4267: '=': 'size_t' から 'UINT' に変換しました。データが失われているかもしれません。
+c:\users\1601271\documents\github\directx12\directx12\directx12\device.cpp(902): warning C4267: '=': 'size_t' から 'UINT' に変換しました。データが失われているかもしれません。
+  Input.cpp
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  Main.cpp
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\1601271\documents\github\directx12\directx12\directx12\main.cpp(64): warning C4244: 'return': 'WPARAM' から 'int' への変換です。データが失われる可能性があります。
+  PMD.cpp
+c:\users\1601271\documents\github\directx12\directx12\directx12\pmd.cpp(146): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+c:\users\1601271\documents\github\directx12\directx12\directx12\pmd.cpp(147): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+c:\users\1601271\documents\github\directx12\directx12\directx12\pmd.cpp(403): warning C4267: '=': 'size_t' から 'UINT' に変換しました。データが失われているかもしれません。
+  Sound.cpp
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  WICTextureLoader12.cpp
+  Window.cpp
+  コードを生成中...
